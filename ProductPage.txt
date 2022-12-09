@@ -6,3 +6,4 @@ login and signup;
 
 
 
+in Navbar we only need thing Logo,Become a host,Login button, if user logged In user profile pic 

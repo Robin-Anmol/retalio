@@ -2,12 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { CustomButton } from "../../components";
 import { FcGoogle } from "react-icons/fc";
+import { IoIosArrowBack, IoIosArrowRoundBack } from "react-icons/io";
 import { TextField } from "@mui/material";
 const Signup = () => {
   return (
     <div className="bg-grey-lighter min-h-screen flex flex-col">
       <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
-        <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+        <div className="bg-white   px-6 py-5 rounded shadow-md text-black w-full">
           <h1 className="mb-2  text-3xl font-sanspro font-medium  text-center">
             Welcome to Airbnb
           </h1>
@@ -52,7 +53,7 @@ const Signup = () => {
             StartIcon={<FcGoogle />}
             BtnText="Sign In with  Google"
             className={
-              "bg-black mt-4 py-2 text-white hover:bg-white hover:text-black w-full "
+              "bg-black mt-4 py-2 text-white hover:bg-black hover:text-white w-full "
             }
           />
           <div className="text-center text-sm text-grey-dark mt-4">
@@ -66,11 +67,18 @@ const Signup = () => {
             </Link>
             <Link
               to="/"
-              className="no-underline ml-4  border-b text-gray-500 border-redAccent-500 text-grey-dark"
+              className="no-underline ml-4   border-b text-gray-500 border-redAccent-500 text-grey-dark"
             >
               Privacy Policy
             </Link>
           </div>
+          <Link
+            to="/"
+            className=" flex items-center gap-2  hover:text-black justify-center w-full capitalize text-sm font-medium mt-5 text-primary-500 "
+          >
+            <IoIosArrowRoundBack className="text-xl  font-extrabold " />
+            <span> back to site</span>
+          </Link>
         </div>
 
         <div className="text-grey-dark mt-6">
