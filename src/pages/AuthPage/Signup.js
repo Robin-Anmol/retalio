@@ -1,10 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { CustomButton } from "../../components";
 import { FcGoogle } from "react-icons/fc";
 import { IoIosArrowBack, IoIosArrowRoundBack } from "react-icons/io";
 import { TextField } from "@mui/material";
+import { BiHide, BiShow } from "react-icons/bi";
+import { SignUp } from "../../store/StoreSlice/AuthSlice";
+
 const Signup = () => {
+  const [fullname, setFullame] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [show, setShow] = useState(false);
+
+  const passwordCheck = (pass) => pass.length >= 8 && pass === confirmPassword;
+
+  const SignUpHandler = async (event) => {
+    event.preventDefault();
+    if (
+      fullname !== "" &&
+      email !== "" &&
+      password !== "" &&
+      confirmPassword !== "" &&
+      passwordCheck(password)
+    ) {
+      try {
+        const response = await SignUp(email, password);
+        console.log(response);
+      } catch (error) {
+        console.log(error.message);
+      } finally {
+      }
+    } else {
+      //  toaster
+    }
+  };
   return (
     <div className="bg-grey-lighter min-h-screen flex flex-col">
       <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
@@ -15,39 +46,67 @@ const Signup = () => {
           <h1 className="mb-4 text-2xl font-sanspro font-medium text-center">
             Sign up
           </h1>
-          <input
-            type="text"
-            className="block border border-grey-light w-full p-3 rounded mb-4"
-            name="fullname"
-            placeholder="Full Name"
-          />
+          <form onSubmit={SignUpHandler}>
+            <input
+              required
+              type="text"
+              value={fullname}
+              className="block border border-grey-light w-full p-3 rounded mb-4"
+              name="fullname"
+              placeholder="Full Name"
+              onChange={(e) => setFullame(e.target.value)}
+            />
 
-          <input
-            type="text"
-            className="block border border-grey-light w-full p-3 rounded mb-4"
-            name="email"
-            placeholder="Email"
-          />
+            <input
+              required
+              value={email}
+              type="text"
+              className="block border border-grey-light w-full p-3 rounded mb-4"
+              name="email"
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
 
-          <input
-            type="password"
-            className="block border border-grey-light w-full p-3 rounded mb-4"
-            name="password"
-            placeholder="Password"
-          />
-          <input
-            type="password"
-            className="block border border-grey-light w-full p-3 rounded mb-4"
-            name="confirm_password"
-            placeholder="Confirm Password"
-          />
+            <div className="flex relative  items-center ">
+              <input
+                required
+                type={`${show ? "text" : "password"}`}
+                value={password}
+                className="block border   border-grey-light w-full p-3 rounded mb-4"
+                name="password"
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              {show ? (
+                <BiShow
+                  className="absolute cursor-pointer active:scale-95 mb-3 mr-2 text-2xl right-0  "
+                  onClick={() => setShow(!show)}
+                />
+              ) : (
+                <BiHide
+                  className="absolute active:scale-95 cursor-pointer mb-3 mr-2 text-2xl right-0 "
+                  onClick={() => setShow(!show)}
+                />
+              )}
+            </div>
+            <input
+              required
+              value={confirmPassword}
+              type={`${show ? "text" : "password"}`}
+              className="block border border-grey-light w-full p-3 rounded mb-4"
+              name="confirm_password"
+              placeholder="Confirm Password"
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
 
-          <CustomButton
-            BtnText="Create Account"
-            className={
-              "bg-primary-500 mt-2 py-2 text-white hover:bg-primary-600 hover:text-white w-full "
-            }
-          />
+            <CustomButton
+              eventType="submit"
+              BtnText="Create Account"
+              className={
+                "bg-primary-500 mt-2 py-2 text-white hover:bg-primary-600 hover:text-white w-full "
+              }
+            />
+          </form>
 
           <CustomButton
             StartIcon={<FcGoogle />}

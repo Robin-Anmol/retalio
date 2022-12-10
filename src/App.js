@@ -7,11 +7,23 @@ import { Home, Location, Login, MyProfile, SignUp } from "./pages";
 import LocationDetail from "./pages/locationDetails";
 
 const App = () => {
-  // const otp = useSelector(selectOTP);
-  // console.log(otp);
+  // const [currentUser, setCurrentUser] = useState(null);
+
+  // useEffect(() => {
+  //   const unsubscribe = onAuthStateChanged(auth, (user) => {
+  //     setCurrentUser(user ? user : null);
+  //   });
+  //   return () => {
+  //     unsubscribe();
+  //   };
+  // }, []);
+
+  // useEffect(() => {
+  //   console.log("The user is", currentUser);
+  // }, [currentUser]);
   const [open, setOpen] = useState(false);
   return (
-    <div className="w-full h-screen scrollbar-hide">
+    <div className="w-full h-screen ">
       <Navbar setOpen={setOpen} open={open} />
       {open && <MobileNavbar setOpen={setOpen} open={open} />}
       <Routes>

@@ -18,7 +18,7 @@ const Navbar = ({ open, setOpen }) => {
         </Link>
 
         <div>
-          <div className=" self-end lg:hidden  ">
+          <div className=" self-end lg:hidden">
             <button
               className="navbar-burger flex items-center text-primary-500 p-3"
               onClick={() => setOpen(!open)}

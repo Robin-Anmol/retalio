@@ -1,4 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
+import { auth } from "../../Firebase";
 
 const initialState = {
   userData: null,
@@ -10,23 +16,41 @@ const AuthSlice = createSlice({
   name: "AuthSlice",
   initialState,
   reducers: {
-    addUser: (state, action) => {
-      state.userData = action.payload;
+    setStatus(state, action) {
+      state.status = action.payload;
     },
-    addUserId: (state, action) => {
-      state.user_id = action.payload;
-    },
-    updateUser: (state, action) => {
-      state.userData = { ...state.userData, personalInfo: action.payload };
-    },
-    saveOTP: (state, action) => {
-      state.otp = action.payload;
-    },
-    logout: (state, action) => {
-      state.userData = null;
-    },
+    // addUser: (state, action) => {
+    //   state.userData = action.payload;
+    // },
+    // addUserId: (state, action) => {
+    //   state.user_id = action.payload;
+    // },
+    // updateUser: (state, action) => {
+    //   state.userData = { ...state.userData, personalInfo: action.payload };
+    // },
+    // saveOTP: (state, action) => {
+    //   state.otp = action.payload;
+    // },
+    // logout: (state, action) => {
+    //   state.userData = null;
+    // },
   },
 });
+
+export async function SignUp(email, password) {
+  return await createUserWithEmailAndPassword(auth, email, password);
+}
+export async function LogIn(email, password) {
+  return await signInWithEmailAndPassword(auth, email, password);
+}
+
+export async function Logout() {
+  return await signOut(auth);
+}
+
+
+
+
 
 export const { addUser, addUserId, updateUser, saveOTP, logout } =
   AuthSlice.actions;
