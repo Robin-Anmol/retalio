@@ -3,6 +3,7 @@ import { IoMdClose } from "react-icons/io";
 import { TbBrandAirbnb } from "react-icons/tb";
 import { Link } from "react-router-dom";
 const Mobile = ({ setOpen, open }) => {
+  const d = new Date();
   return (
     <div
       className={`absolute ${
@@ -17,7 +18,7 @@ const Mobile = ({ setOpen, open }) => {
         <div className="flex items-center mb-8">
           <Link className="mr-auto text-3xl flex items-center gap-1 font-bold leading-none">
             <TbBrandAirbnb className=" text-3xl lg:text-4xl text-primary-500" />
-            <span className="text-3xl text-primary-500">Airbnb</span>
+            <span className="text-3xl text-primary-500">Retalio</span>
           </Link>
           <button className="" onClick={() => setOpen(!open)}>
             <IoMdClose className="text-3xl" />
@@ -28,24 +29,31 @@ const Mobile = ({ setOpen, open }) => {
             <li className="">
               <Link
                 to="/becomeahost"
-                className="block p-4 text-sm font-semibold capitalize text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                className="block p-4 text-sm font-semibold capitalize text-gray-400 hover:bg-blue-50 hover:text-primary-600 rounded"
+                onClick={() => setOpen(!open)}
               >
                 Become a host
               </Link>
             </li>
             <li className="">
-              <Link className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded">
+              <Link
+                // onClick={() => setOpen(!open)}
+                className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-primary-600 rounded"
+              >
                 About Us
               </Link>
             </li>
             <li className="">
-              <Link className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded">
+              <Link
+                onClick={() => setOpen(!open)}
+                className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-primary-600 rounded"
+              >
                 Services
               </Link>
             </li>
 
             <li className="">
-              <Link className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded">
+              <Link className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-primary-600 rounded">
                 Contact
               </Link>
             </li>
@@ -67,7 +75,7 @@ const Mobile = ({ setOpen, open }) => {
             </Link>
           </div>
           <p className="my-4 text-xs text-center text-gray-400">
-            <span>Copyright © 2021</span>
+            <span>Copyright © {d.getFullYear()}</span>
           </p>
         </div>
       </nav>

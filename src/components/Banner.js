@@ -12,7 +12,7 @@ const Banner = () => {
   const messages2 = [
     "Upstart your Next",
     "Kickstart your Next",
-    "Jumpstart your Next",
+    "Jumpstart your next",
   ];
 
   const [index, setIndex] = useState(0);
@@ -22,7 +22,7 @@ const Banner = () => {
   useEffect(() => {
     setTimeout(() => {
       setIndex((prev) => (prev < 2 ? prev + 1 : 0));
-    }, 5000);
+    }, 4000);
   }, [index]);
   return (
     <section className="h-full max-h-[640px] my-12 xl:mb-24">
@@ -42,7 +42,7 @@ const Banner = () => {
               />
             </div>
             <span className=" px-4 lg:px-0 lg:w-[75%] text-4xl lg:text-5xl text-start lg:text-start  font-semibold leading-none  mb-6">
-              with Airbnb
+              with Retalio
             </span>
           </div>
           <p className="max-w-[480px] text-xl text-start px-4 lg:px-0 lg:text-2xl mb-8">

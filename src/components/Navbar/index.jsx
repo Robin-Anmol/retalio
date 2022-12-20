@@ -7,14 +7,14 @@ import CustomButton from "../Button";
 import { MobileNavbar } from "..";
 const Navbar = ({ open, setOpen }) => {
   return (
-    <header className="sticky  top-0 ">
-      <div className="  justify-between  px-6 lg:px-16 py-2 lg:py-4 flex  shadow-lg  w-full  items-center bg-white  ">
+    <header className="sticky z-10  top-0 ">
+      <div className="  justify-between  px-6 lg:px-16 py-2 lg:py-4 flex  shadow-md  w-full  items-center bg-white  ">
         <Link
           to="/"
           className="text-3xl flex items-center  gap-1 font-bold leading-none"
         >
           <TbBrandAirbnb className=" text-3xl lg:text-4xl text-primary-500" />
-          <span className="text-3xl text-primary-500">Airbnb</span>
+          <span className="text-3xl text-primary-500">Retalio</span>
         </Link>
 
         <div>
@@ -27,7 +27,7 @@ const Navbar = ({ open, setOpen }) => {
             </button>
           </div>
           <Link
-            to="/becomeahost"
+            to="/becomeahost/details"
             className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200"
           >
             Become a host

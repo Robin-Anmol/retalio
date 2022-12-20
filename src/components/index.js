@@ -1,5 +1,6 @@
 export { default as Navbar } from "./Navbar";
 export { default as ProtectedRoute } from "./ProtectedRoute";
+export { default as IsMobileRoute } from "./IsMobileRoute";
 export { default as CustomButton } from "./Button";
 export { default as Footer } from "./Footer";
 export { default as Search } from "./Search";
@@ -8,3 +9,4 @@ export { default as PropertyDropdown } from "./PropertyDropdown";
 export { default as PriceRangeDropdown } from "./PriceRangeDropdown";
 export { default as Banner } from "./Banner";
 export { default as MobileNavbar } from "./Navbar/Mobile";
+export { default as HostSidebar } from "./HostSideBar";
