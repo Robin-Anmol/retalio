@@ -3,6 +3,7 @@ import { useMediaQuery } from "react-responsive";
 import { HostSidebar, ProtectedRoute } from "../../components";
 import { Navigate, Route, Routes } from "react-router-dom";
 import HostDetails from "./Details";
+import HostLocation from "./Location";
 
 const BecomeAHost = () => {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1024px)" });
@@ -12,7 +13,7 @@ const BecomeAHost = () => {
       path: "/details",
     },
     {
-      element: <HostDetails />,
+      element: <HostLocation />,
       path: "/location",
     },
     {

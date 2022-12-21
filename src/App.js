@@ -17,6 +17,7 @@ import {
   BecomeAHost,
   Page404,
   HostDetails,
+  HostLocation,
 } from "./pages";
 import LocationDetail from "./pages/locationDetails";
 
@@ -45,7 +46,7 @@ const App = () => {
       path: "/becomeahost/details",
     },
     {
-      element: <HostDetails />,
+      element: <HostLocation />,
       path: "/becomeahost/location",
     },
     {
