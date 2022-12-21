@@ -12,12 +12,12 @@ import CancelRounded, {
   RadioGroup,
   TextField,
 } from "@mui/material";
-import { LocationType } from "../../utlis";
+import { Locationtype } from "../../utlis";
 import { MdApartment, MdCancel } from "react-icons/md";
 import { BsPeople } from "react-icons/bs";
 const Details = () => {
   const navigate = useNavigate();
-  const [option, setOptions] = useState(LocationType);
+  const [option, setOptions] = useState(Locationtype);
   const [LocationIndex, SetLocationIndex] = useState(0);
   const [isCustomLocation, setCustomLocation] = useState(false);
 
@@ -52,7 +52,7 @@ const Details = () => {
       </button>
       <div className="w-full h-full px-4 lg:px-10 py-4 shadow-lg flex flex-col gap-6 justify-start ">
         <span className="text-black font-semibold uppercase  text-2xl text-start  ">
-          Add location Details and Description
+          Add Property Details and Description
         </span>
         <form
           className="flex flex-col  gap-4 justify-start w-full   "
@@ -282,7 +282,7 @@ const Details = () => {
               className="border  px-2 py-3 text-lg rounded-md focus:outline-primary-500 border-gray-500"
               aria-label="minimum height"
               minRows={6}
-              maxLength={500}
+              maxLength={2000}
               name="property_Description"
               placeholder="Eg: Tell us something about your property....  "
               // onChange={handleChange}

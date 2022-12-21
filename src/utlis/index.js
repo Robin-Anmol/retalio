@@ -1,1 +1,1 @@
-export { default as LocationType } from "./constants";
+export { Locationtype, AmenitiesType } from "./constants";

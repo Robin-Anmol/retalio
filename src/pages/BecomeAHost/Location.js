@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, TextareaAutosize } from "@mui/material";
 import { Country } from "country-state-city";
 import React, { useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
@@ -184,18 +184,23 @@ const Location = () => {
           {/* Location Address */}
           <div className="flex flex-col lg:flex-row justify-between gap-4">
             {/* Latitude  */}
-            <div className="flex flex-col gap-1 w-full lg:w-[60%]">
+            <div className="flex flex-col gap-1 w-full lg:w-[40%]">
               <label className="mb-2 text-lg lg:text-xl font-medium ">
                 Location Address <span className="text-primary-500">*</span>
               </label>
 
               <div className="flex items-center  relative ">
-                <input
+                <TextareaAutosize
+                  className="border  w-full px-2 py-3 text-lg rounded-md focus:outline-primary-500 border-gray-500"
+                  aria-label="minimum height"
+                  minRows={4}
+                  maxLength={500}
+                  name="property_Description"
+                  placeholder="   "
+                  // onChange={handleChange}
+                  // value={property_desc ? property_desc.property_info : ""}
+
                   required
-                  //onchange left
-                  placeholder=""
-                  type="text"
-                  className=" px-3 py-2 w-full text-lg  border rounded-md border-gray-500 focus:outline-primary-500 "
                 />
                 {/* <BsPeople className="left-2 text-primary-500 text-2xl absolute " /> */}
               </div>

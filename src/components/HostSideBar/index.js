@@ -11,6 +11,7 @@ import {
   MdOutlineRateReview,
   MdOutlinePriceCheck,
   MdOutlineAccessTime,
+  MdOutlineLocationCity,
 } from "react-icons/md";
 import { GrContactInfo, GrNotes } from "react-icons/gr";
 import { NavLink } from "react-router-dom";
@@ -90,15 +91,15 @@ const index = () => {
   ];
 
   return (
-    <div className="w-full  ">
+    <div className="w-full flex flex-col  ">
       <div
         key={index}
-        className={` w-full my-1 items-center  justify-center transition ease-in-out duration-200 flex px-3 py-3 gap-3.5 rounded-md shadow-lg mb-5 text-white  bg-black `}
+        className={` w-full my-1  items-center  justify-center transition ease-in-out duration-200 flex px-3 py-3 gap-3.5 rounded-md shadow-lg mb-5 text-white  bg-black `}
       >
-        {/* <div className=" text-2xl  font-medium"></div> */}
-        <div className=" text-xl font-medium capitalize ">
-          Add your property Details
+        <div className=" text-2xl  font-medium">
+          <MdOutlineLocationCity />
         </div>
+        <div className=" text-xl font-medium capitalize ">List your Space</div>
       </div>
       {SidebarLinks?.map((item, index) => {
         return (

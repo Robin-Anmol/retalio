@@ -4,6 +4,7 @@ import { HostSidebar, ProtectedRoute } from "../../components";
 import { Navigate, Route, Routes } from "react-router-dom";
 import HostDetails from "./Details";
 import HostLocation from "./Location";
+import Amenities from "./Amenities";
 
 const BecomeAHost = () => {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1024px)" });
@@ -17,7 +18,7 @@ const BecomeAHost = () => {
       path: "/location",
     },
     {
-      element: <HostDetails />,
+      element: <Amenities />,
       path: "/amenities",
     },
     {
