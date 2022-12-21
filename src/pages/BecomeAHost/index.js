@@ -53,8 +53,8 @@ const BecomeAHost = () => {
   ];
   return (
     <div className="mx-6 flex flex-col w-auto justify-center my-4  mb-11  h-full ">
-      <div className="w-full flex h-full ">
-        <div className="hidden lg:flex w-1/5 shadow-xl px-3 py-4    rounded-lg   ">
+      <div className="w-full flex items-start ">
+        <div className="hidden  sticky top-8   lg:flex w-1/5 shadow-xl px-3 py-4    rounded-lg   ">
           <HostSidebar />
         </div>
         <div className="w-full h-full shadow-xl px-3 py-4  lg:hidden">

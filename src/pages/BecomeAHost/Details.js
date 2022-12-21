@@ -95,7 +95,7 @@ const Details = () => {
                   placeholder="Add New Location"
                   type="text"
                   //onchange left
-                  className=" px-3 pl-10 py-2 w-full text-lg  border rounded-sm border-gray-500 focus:outline-primary-500 "
+                  className=" px-3 pl-10 py-2 w-full text-lg  border rounded-md border-gray-500 focus:outline-primary-500 "
                 />
                 <MdApartment className="left-2 text-primary-500 text-2xl absolute " />
               </div>
@@ -112,7 +112,7 @@ const Details = () => {
                 type="number"
                 placeholder="eg:2500"
                 //onchange left
-                className=" px-3 pl-10 py-2 w-full text-lg  border rounded-sm border-gray-500 focus:outline-primary-500 "
+                className=" px-3 pl-10 py-2 w-full text-lg  border rounded-md border-gray-500 focus:outline-primary-500 "
               />
               <IoResizeOutline className="left-2 text-primary-500 text-2xl absolute " />
             </div>
@@ -129,7 +129,7 @@ const Details = () => {
                 //onchange left
                 min={1}
                 type="text"
-                className=" px-3 pl-10 py-2 w-full text-lg  border rounded-sm border-gray-500 focus:outline-primary-500 "
+                className=" px-3 pl-10 py-2 w-full text-lg  border rounded-md border-gray-500 focus:outline-primary-500 "
               />
               <MdApartment className="left-2 text-primary-500 text-2xl absolute " />
             </div>
@@ -146,7 +146,7 @@ const Details = () => {
                 //onchange left
                 placeholder="eg:100"
                 type="number"
-                className=" px-3 pl-10 py-2 w-full text-lg  border rounded-sm border-gray-500 focus:outline-primary-500 "
+                className=" px-3 pl-10 py-2 w-full text-lg  border rounded-md border-gray-500 focus:outline-primary-500 "
               />
               <BsPeople className="left-2 text-primary-500 text-2xl absolute " />
             </div>
@@ -279,7 +279,7 @@ const Details = () => {
               <span className="text-primary-500">*</span>
             </label>
             <TextareaAutosize
-              className="border  px-2 py-3 text-lg focus:outline-primary-500 border-gray-500"
+              className="border  px-2 py-3 text-lg rounded-md focus:outline-primary-500 border-gray-500"
               aria-label="minimum height"
               minRows={6}
               maxLength={500}
@@ -292,10 +292,16 @@ const Details = () => {
             />
           </div>
           <Button
-            className="flex mb-7 flex-col gap-2 bg-primary-500 text-white hover:bg-primary-500  w-full lg:w-[50%]"
+            className="flex  py-2 text-base flex-col gap-2 bg-black text-white hover:bg-black  w-full lg:w-[50%]"
+            type="reset"
+          >
+            Reset Form
+          </Button>
+          <Button
+            className="flex mb-7 py-2 text-base flex-col gap-2 bg-primary-500 text-white hover:bg-primary-500  w-full lg:w-[50%]"
             type="submit"
           >
-            Save Changes And Continue
+            Save And Continue
           </Button>
         </form>
       </div>
