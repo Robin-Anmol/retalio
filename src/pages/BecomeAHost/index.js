@@ -5,7 +5,9 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import HostDetails from "./Details";
 import HostLocation from "./Location";
 import Amenities from "./Amenities";
-
+import Features from "./Features";
+import DoAndDonts from "./DoAndDon'ts";
+import HostRules from "./HostRules";
 const BecomeAHost = () => {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1024px)" });
   const routeLinks = [
@@ -26,11 +28,11 @@ const BecomeAHost = () => {
 
       path: "/photos",
     },
-    { element: <HostDetails />, path: "/feature" },
-    { element: <HostDetails />, path: "/do" },
+    { element: <Features />, path: "/feature" },
+    { element: <DoAndDonts />, path: "/do" },
     { element: <HostDetails />, path: "/pricing" },
     {
-      element: <HostDetails />,
+      element: <HostRules />,
       path: "/rules",
     },
     { element: <HostDetails />, path: "/timing" },
@@ -55,13 +57,13 @@ const BecomeAHost = () => {
   return (
     <div className="mx-6 flex flex-col w-auto justify-center my-4  mb-11  h-full ">
       <div className="w-full flex items-start ">
-        <div className="hidden  sticky top-8   lg:flex w-1/5 shadow-xl px-3 py-4    rounded-lg   ">
+        <div className="hidden       lg:flex w-1/5 shadow-md px-3 py-4     rounded-lg   ">
           <HostSidebar />
         </div>
-        <div className="w-full h-full shadow-xl px-3 py-4  lg:hidden">
+        <div className="w-full h-full shadow-md px-3 py-4  lg:hidden">
           <HostSidebar />
         </div>
-        <div className="hidden lg:flex flex-grow">
+        <div className="hidden  w-4/5  lg:flex flex-grow">
           <Routes>
             {!isTabletOrMobile && (
               <Route

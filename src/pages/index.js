@@ -8,3 +8,6 @@ export { default as Page404 } from "./404Page";
 export { default as HostDetails } from "./BecomeAHost/Details";
 export { default as HostLocation } from "./BecomeAHost/Location";
 export { default as Amenities } from "./BecomeAHost/Amenities";
+export { default as Features } from "./BecomeAHost/Features";
+export { default as DoAndDonts } from "./BecomeAHost/DoAndDon'ts";
+export { default as HostRules } from "./BecomeAHost/HostRules";

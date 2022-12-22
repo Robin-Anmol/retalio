@@ -1,1 +1,1 @@
-export { Locationtype, AmenitiesType } from "./constants";
+export { Locationtype, AmenitiesType, FeatureConstant } from "./constants";

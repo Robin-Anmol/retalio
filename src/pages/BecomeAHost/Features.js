@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { IoIosAdd, IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-import { AmenitiesType } from "../../utlis";
+import { FeatureConstant } from "../../utlis";
 import { Button, Checkbox } from "@mui/material";
 import {
   AiFillCaretDown,
@@ -16,7 +16,7 @@ const Amenities = () => {
   const navigate = useNavigate();
 
   const [open, setOpen] = useState(false);
-  const [allAmenities, SetAllAmenities] = useState([...AmenitiesType]);
+  const [allAmenities, SetAllAmenities] = useState([...FeatureConstant]);
   const [notSelectedAmenities, setNotSelectedAmenities] = useState([]);
   const [selectedAmenities, setSelectedAmenities] = useState([]);
   const [SearchResult, setSearchResult] = useState([]);
@@ -105,7 +105,7 @@ const Amenities = () => {
             <div className="flex h-full gap-2 w-full lg:w-[40%] ">
               <div className="flex  h-full flex-col w-full">
                 <label className="mb-2 text-lg lg:text-xl font-medium ">
-                  Amenities<span className="text-primary-500">*</span>
+                  Features<span className="text-primary-500">*</span>
                 </label>
                 <div className="w-full relative">
                   <div
@@ -114,7 +114,7 @@ const Amenities = () => {
                     }}
                     className="w-full px-5 cursor-pointer active:scale-[.999] rounded-md py-2 flex bg-primary-500 text-white  items-center justify-between "
                   >
-                    <div className="">Select Amenities</div>
+                    <div className="">Select Features</div>
                     {open ? (
                       <AiFillCaretUp className="text-xl" />
                     ) : (
@@ -171,7 +171,7 @@ const Amenities = () => {
             {/* city name */}
             <div className="flex flex-col gap-1 w-full lg:w-[40%]">
               <label className="mb-2 text-lg lg:text-xl font-medium ">
-                Enter Custom Amenities{" "}
+                Enter Custom Features{" "}
               </label>
 
               <div className="flex items-center gap-3  relative ">
@@ -187,11 +187,10 @@ const Amenities = () => {
               </div>
             </div>
           </div>
-
           <div className="flex gap-2 w-full lg:w-[40%] ">
             <div className="flex flex-col w-full">
               <label className="mb-2 text-lg text-primary-500 lg:text-xl font-medium ">
-                Selected Amenities
+                Selected Features
               </label>
               <div className="w-full ">
                 <ul className="w-full gap-1 bg-black text-white rounded-lg  flex flex-col justify-center items-start ">
@@ -202,7 +201,7 @@ const Amenities = () => {
                         className=" px-3 py-2 shadow-lg rounded-md flex w-full items-center relative justify-between "
                         // onChange={() => checkHandler(item?.value)}
                       >
-                        <span className="text-md ">
+                        <span className="text-md   ">
                           {index + 1}. {item.value}
                         </span>
                         <MdDeleteOutline className=" cursor-pointer text-3xl absolute right-5  text-primary-500" />
@@ -213,6 +212,7 @@ const Amenities = () => {
               </div>
             </div>
           </div>
+
           <Button
             className="flex  py-2 text-base flex-col gap-2 bg-black text-white hover:bg-black  w-full lg:w-[40%]"
             type="reset"

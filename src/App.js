@@ -19,6 +19,9 @@ import {
   HostDetails,
   HostLocation,
   Amenities,
+  Features,
+  DoAndDonts,
+  HostRules,
 } from "./pages";
 import LocationDetail from "./pages/locationDetails";
 
@@ -59,11 +62,11 @@ const App = () => {
 
       path: "/becomeahost/photos",
     },
-    { element: <HostDetails />, path: "/becomeahost/feature" },
-    { element: <HostDetails />, path: "/becomeahost/do" },
+    { element: <Features />, path: "/becomeahost/feature" },
+    { element: <DoAndDonts />, path: "/becomeahost/do" },
     { element: <HostDetails />, path: "/becomeahost/pricing" },
     {
-      element: <HostDetails />,
+      element: <HostRules />,
       path: "/becomeahost/rules",
     },
     { element: <HostDetails />, path: "/becomeahost/timing" },
